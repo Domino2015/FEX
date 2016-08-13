@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+ <!--  <button id="btn">点我</button>
+ <div id="div1">hahah</div>
+
+ <div>
+  <p>click me</p>
+ </div>-->
+<!--  <ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+<ul>
+  <li>11</li>
+  <li>22</li>
+  <li>33</li>
+</ul> -->
+ <!-- <p id="para">Hello <em>world</em></p> 
+ <div id="div">
+  <p id="p">haha</p>
+ </div> -->
+ <p id="p">我是一个疯子.</p>
+</body>
+<script type="text/javascript">
+
+var $ = function (id) {
+    return document.getElementById(id);
+}
+
+
+function hello(){
+  console.log("hello word!");
+}
+
+$('p').addEventListener('click', hello,false);
+var event = new Event('click');
+$('p').dispatchEvent(event);
+
+/*1.1
+function hello(){
+  console.log("hello word!");
+}
+
+$('btn').addEventListener('click', hello,false);
+
+*/
+/*1.2如果希望向监听函数传递参数，可以用匿名函数包装一下监听函数
+function print(x){
+  console.log(x);
+}
+
+$('div1').addEventListener('click', function(){print('hello');},false);
+
+*/
+/*移除监听事件
+function hello(){
+  console.log("hello word!");
+}
+
+$('btn').addEventListener('click', hello,false);
+$('btn').removeEventListener('click', hello,false);
+*/
+/*1.3 dispatchEven事件
+function hello(){
+  console.log("hello word!");
+}
+$('btn').addEventListener('click', hello,false);
+var event = new Event('click');
+var hah = $('btn').dispatchEvent(event);
+console.log(hah);
+
+var canceled = !$('btn').dispatchEvent(event);
+if(canceled){
+  console.log('取消');
+}else{
+  console.log('未取消');
+}
+*/
+/*
+function haha(x){
+    console.log(x);
+}
+window.addEventListener('load',function(){haha("hahaa");},false);
+*/
+/*2.4
+var id = "doc";
+function hello(){
+  console.log(this.id);
+} 
+$('para').addEventListener('click',hello,false);
+*/
+/*
+var id = "doc";
+
+function hello(){
+  console.log(this.id);
+} 
+
+$('para').setAttribute('onclick','hello()');*/
+/*3.1
+var phases = {
+  1:'capture',
+  2:'target',
+  3:'bubble'
+};
+
+var div =document.querySelector('div');
+var p = document.querySelector('p');
+
+div.addEventListener('click',callback,true);
+p.addEventListener('click',callback,true);
+div.addEventListener('click',callback,false);
+p.addEventListener('click',callback,false);
+
+function callback(event){
+  var tag = event.currentTarget.tagName;
+  var phase = phases[event.eventPhase];
+  console.log("Tag: "+ tag +". EventPhase: " + phase);
+}*/
+
+/*3.2
+var ul = document.querySelector('ul');
+
+ul.addEventListener('click',function(event){
+  if(event.target.tagName.toLowerCase()=='li'){
+    console.log('我控制li');
+  }
+});*/
+/*
+$('p').addEventListener('click',function(event){
+  event.stopPropagation();
+});
+$("div").addEventListener('click',function(){console.log('1');},false);
+*/
+/*var ev = new Event("look", {"bubbles":true, "cancelable":false});
+document.dispatchEvent(ev);*/
+/*
+function hide(e){
+  console.log(this === e.currentTarget);
+  e.target.style.visibility = "hidden";
+}
+$('para').addEventListener('click',hide,false);*/
+/*var previousX;
+var previousY;
+var previousT;
+
+window.addEventListener('mousemove', function(event) {
+ 
+  if (!(previousX === undefined ||
+        previousY === undefined ||
+        previousT === undefined)) {
+    var deltaX = event.screenX - previousX;
+    var deltaY = event.screenY - previousY;
+    var deltaD = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+
+    var deltaT = event.timeStamp - previousT;
+    console.log(deltaD / deltaT * 1000);
+  }
+  previousX = event.screenX;
+  previousY = event.screenY;
+  previousT = event.timeStamp;
+});*/
+
+</script>
+</html>
