@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<ul id="aqi-list">
+  <li>hah</li>
+  <li>xixi</li>
+</ul>
+<button id="btn">点击我</button>
+<script type="text/javascript">
+
+/*function myFunction(){
+  var node = document.createElement('li');
+  var textnode = document.createTextNode('water');
+  node.appendChild(textnode);
+  document.getElementById("myList").appendChild(node);
+}
+*/
+/*
+function myFunction(){
+  var oList = document.getElementById("aqi-list");
+  var oLi = document.createElement("li");
+  oLi.innerHTML = '第一名';
+  oList.appendChild(oLi);
+}
+document.getElementById('btn').addEventListener('click',myFunction,false);*/
+/*
+function myli(){
+  var x1 = document.getElementById('aqi-list');
+  var node = document.createElement('li');
+  var nodeText = document.createTextNode('water!')
+  node.appendChild(nodeText);
+  x1.appendChild(node);
+}
+document.getElementById('btn').addEventListener('click',myli,false);*/
+var $ = function (id) {
+    return document.getElementById(id);
+  }
+
+function myul(){
+  var node = document.createElement('li')
+  node.innerHTML="heheh..."
+  $('aqi-list').appendChild(node);
+}
+
+$('btn').addEventListener('click', myul,false);
+
+</script>
+</body>
+</html>
