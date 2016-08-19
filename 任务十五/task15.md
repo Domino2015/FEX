@@ -1,3 +1,10 @@
+---
+title: 前端笔记三
+date: 2016年8月18日22:31:57
+categories: [WEB]
+tags: [WEB,笔记]
+---
+
 > 接触一下JavaScript中的高级选择器
 学习JavaScript中的数组对象遍历、读写、排序等操作
 学习简单的字符串处理操作
@@ -169,8 +176,59 @@ Number()函数把对象转化为数字
 如果对象是Date对象，Number（）返回从 1970 年 1 月 1 日至今的毫秒数。
 如果对象的值无法转换为数字，那么 Number() 函数返回 `NaN`。
 
+## js中innerHTML与innerText的用法与区别
 
+#### innerHTML
 
+`test.innerHTML: `也就是从对象的起始位置到终止位置的全部内容,包括Html标签。
+
+#### innerText
+
+`test.innerText: `从起始位置到终止位置的内容, 但它去除Html标签
+
+#### outHTML
+
+`test.outerHTML: `除了包含innerHTML的全部内容外, 还包含对象标签本身。
+
+#### 特别说明
+
+> innerHTML是符合W3C标准的属性，而innerText只适用于IE浏览器，因此，尽可能地去使用innerHTML，而少用innerText，如果要输出不含HTML标签的内容，可以使用innerHTML取得包含HTML标签的内容后，再用正则表达式去除HTML标签
+
+**innerHTML.replace(/<.+?>/gim,'') == innerText**
+
+## replace()替换函数
+
+replace() 方法使用一个替换值（replacement）替换掉一个匹配模式（pattern）在原字符串中某些或所有的匹配项，并返回替换后的新的字符串。这个替换模式可以是一个字符串或者一个 RegExp，替换值可以是一个字符串或者一个函数。
+
+#### 语法
+> str.replace(regexp|substr, newSubStr|function)
+
+参数             | 描述
+-----------------| -----
+regexp (pattern) | 一个 RegExp 对象。该正则所匹配的内容会被第二个参数的返回值替换掉。
+substr (pattern) | 一个要被 newSubStr 替换的字符串。
+newSubStr (replacement) | 用于替换掉第一个参数在原字符串中的匹配部分的 String。该字符串中可以内插一些特殊的变量名。参考下面的使用字符串作为参数。
+function (replacement) | 一个用来创建新子字符串的函数，该函数的返回值将替换掉第一个参数匹配到的结果。参考下面的指定一个函数作为参数。
+
+#### 返回值
+
+一个部分或全部匹配由替代模式所取代的`新的`字符串。
+
+后面一定要加替换的字符，如果只是想清除就添加空字符`''`
+
+```HTML
+<ul id="ul">
+  <li>21212<b>32</b></li>
+  <li>21212<b>32</b></li>
+  <li>21212<b>32</b></li>
+</ul>
+<script>
+var ul=document.getElementById('ul');
+fot(var i=0;i<ul.childElementCount;i++){
+  ul.children[i].innerHTML.replace(/<.+?>/gim),'';
+}
+</script>
+```
 
 
 

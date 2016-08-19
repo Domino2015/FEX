@@ -3,9 +3,9 @@
 ## sort
 
 语法
-> arr.sort([compareFunction])    
+> arr.sort([compareFunction])
 
-compareFunction   
+compareFunction
 可选，用来指定按照某种顺序进行排列的函数。
 
 #### 描述
@@ -82,4 +82,4 @@ function myFunction(){
 document.getElementById('btn').addEventListener('click',myFunction,false);
 </script>
 
-```    
+```
