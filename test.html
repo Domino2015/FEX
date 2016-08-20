@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <script type="text/javascript">
-        function book(a,b){
-            this.name=a;
-            this.value=b;
+        function getEvent(event){
+            x= event.target;
+            alert(x.id);
         }
-        var newbook = new book('haha','123');
-
-
-        document.write("Book title is : " + newbook.name + "<br>");
-        document.write("Book author is : " + newbook.value + "<br>");
     </script>
-
 </head>
 <body>
+    <p id="p1" onmousedown="getEvent(event)">haha</p>
 
 </body>
 </html>
